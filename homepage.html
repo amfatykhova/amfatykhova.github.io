@@ -1,0 +1,278 @@
+<!-- Description: 
+    Homework 1: Amelia Fatykhova
+    Personal Website
+    Categories: 
+    - SVG Title
+        - Ellipse SVG shape used here for design purposes
+    - About Me
+    - Links & Contact
+    - Work Experience
+        - Javascript CSV parsing used here
+    - Research & Projects
+        - Javascript CSV parsing used here
+    - Relevant Coursework
+        - Javascript CSV parsing used here
+    - Miscellaneous
+
+    SVG section dividers used throughout
+
+
+    d3.js version 5 used for CSV parsing functionality
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<script src="http://d3js.org/d3.v5.min.js" charset="utf-8"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Elements</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body style="font-family: arial;">
+    <div id="content">
+        <div id="svg_title">
+            <svg height="135" width="800">
+                <defs>
+                  <linearGradient id="title" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:rgb(36, 225, 165)" />
+                    <stop offset="50%" style="stop-color:rgb(34, 102, 229)" />
+                    <stop offset="100%" style="stop-color:rgb(6, 218, 255)" />
+                  </linearGradient>
+                </defs>
+                <ellipse cx="400" cy="70" rx="250" ry="55" fill="url(#title)" />
+                <text fill="rgb(212, 249, 237)" font-size="43" font-weight="bold" font-family="arial" x="220" y="86">Amelia Fatykhova</text>
+              </svg>
+        </div>
+        <span>
+            <img src="./img/ProfilePicture.png" width="220" height="220">
+        </span>
+        <h1>Hello!</h1>
+        <h2>About Me</h2>
+        <h3>MS CS @ Georgia Tech</h3>
+        <p>I am a Computer Science MS student at Georgia Tech concentrating in Human Computer Interaction with an interest in ubiquitous computing and interactive technology. I have 5+ years of experience leading and working within small teams. I am a skillful communicator and thrive in any collaborative environment, from a scrum team to a remote caving expedition. I will be graduating in May 2024.</p>
+        <div id="svg_divider_1">
+            <svg height="30" width="800">
+                <defs>
+                  <linearGradient id="divider" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:rgb(36, 225, 165)" />
+                    <stop offset="50%" style="stop-color:rgb(34, 102, 229)" />
+                    <stop offset="100%" style="stop-color:rgb(6, 218, 255)" />
+                  </linearGradient>
+                </defs>
+                <rect width="800" height="10" x="0" y="10" fill="url(#divider)" />
+              </svg>
+        </div>
+        <h2>Links & Contact</h2>
+        <ul id="links_contact">
+            <li>Email: am.fatykhova@gmail.com, afatykhova@gatech.edu</li>
+            <li>
+                <a href="./resume/AmeliaSpring2024Resume.pdf">CV</a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/amelia-fatykhova-451605191/">LinkedIn</a>
+            </li>
+            <li>
+                <a href="https://github.com/amfatykhova">Git Hub</a>
+            </li>
+            <li>
+                <a href="http://sonify.psych.gatech.edu/">Sonification Lab</a>
+            </li>
+        </ul>
+        <div id="svg_divider_2">
+            <svg height="30" width="800">
+                <defs>
+                  <linearGradient id="divider" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:rgb(36, 225, 165)" />
+                    <stop offset="50%" style="stop-color:rgb(34, 102, 229)" />
+                    <stop offset="100%" style="stop-color:rgb(6, 218, 255)" />
+                  </linearGradient>
+                </defs>
+                <rect width="800" height="10" x="0" y="10" fill="url(#divider)" />
+              </svg>
+        </div>
+        <h2>Work Experience</h2>
+            <!-- populate with a CSV file -->
+            <ul id="job_list">
+                <script>
+                    
+                    d3.csv('./data/jobs_data.csv', function(data) {
+                        let list = document.getElementById("job_list");
+
+                        let jobString = "";
+                        let jobDescription1 = "";
+                        let jobDescription2 = "";
+                        let jobDescription3 = "";
+                        let jobTenure = "";
+
+                        jobString += data.Title + " -- ";
+                        jobString += data.Location + " -- ";
+                        jobString += data.Name;
+                        jobTenure += data.Time.toUpperCase();
+
+                        jobDescription1 += data.Description1;
+                        jobDescription2 += data.Description2;
+                        jobDescription3 += data.Description3;
+
+                        let listItem = document.createElement('li');
+                        listItem.id = "header"
+                        listItem.innerText = jobString;
+                        list.appendChild(listItem);   
+                        
+                        let datesItem = document.createElement('ul');
+                        datesItem.id = 'tenure'
+                        datesItem.innerText = jobTenure;
+                        list.appendChild(datesItem);
+
+                        let descriptionLine1 = document.createElement('ul');
+                        descriptionLine1.id = 'description'
+                        descriptionLine1.innerText = jobDescription1;
+                        list.appendChild(descriptionLine1);
+
+                        let descriptionLine2 = document.createElement('ul');
+                        descriptionLine2.id = 'description'
+                        descriptionLine2.innerText = jobDescription2;
+                        list.appendChild(descriptionLine2);
+
+                        let descriptionLine3 = document.createElement('ul');
+                        descriptionLine3.id = 'description'
+                        descriptionLine3.innerText = jobDescription3;
+                        list.appendChild(descriptionLine3);
+                    });
+                    
+                </script>
+            </ul>
+        <div id="svg_divider_3">
+            <svg height="30" width="800">
+                <defs>
+                    <linearGradient id="divider" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:rgb(36, 225, 165)" />
+                    <stop offset="50%" style="stop-color:rgb(34, 102, 229)" />
+                    <stop offset="100%" style="stop-color:rgb(6, 218, 255)" />
+                    </linearGradient>
+                </defs>
+                <rect width="800" height="10" x="0" y="10" fill="url(#divider)" />
+                </svg>
+        </div>
+        <h2>Research and Projects</h2>
+            <ul id="research_list">
+                <script>
+                    
+                    d3.csv('./data/research.csv', function(data) {
+                        let list = document.getElementById("research_list");
+
+                        let heading = "";
+                        let dates = "";
+                        let jobDescription1 = "";
+                        let jobDescription2 = "";
+
+                        heading += data.Title + " -- ";
+                        heading += data.SubTitle;
+                        dates += data.Dates.toUpperCase();
+
+                        jobDescription1 += data.Description1;
+                        jobDescription2 += data.Description2;
+
+                        let listItem = document.createElement('li');
+                        listItem.id = "header"
+                        listItem.innerText = heading;
+                        list.appendChild(listItem);   
+                        
+                        let datesItem = document.createElement('ul');
+                        datesItem.id = 'tenure'
+                        datesItem.innerText = dates;
+                        list.appendChild(datesItem);
+
+                        let descriptionLine1 = document.createElement('ul');
+                        descriptionLine1.id = 'description'
+                        descriptionLine1.innerText = jobDescription1;
+                        list.appendChild(descriptionLine1);
+
+                        let descriptionLine2 = document.createElement('ul');
+                        descriptionLine2.id = 'description'
+                        descriptionLine2.innerText = jobDescription2;
+                        list.appendChild(descriptionLine2);
+                    });
+                    
+                </script>
+            </ul>
+        <div id="svg_divider_4">
+            <svg height="30" width="800">
+                <defs>
+                    <linearGradient id="divider" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:rgb(36, 225, 165)" />
+                    <stop offset="50%" style="stop-color:rgb(34, 102, 229)" />
+                    <stop offset="100%" style="stop-color:rgb(6, 218, 255)" />
+                    </linearGradient>
+                </defs>
+                <rect width="800" height="10" x="0" y="10" fill="url(#divider)" />
+                </svg>
+        </div>
+        <h2>Relevant Coursework</h2>
+            <!-- populate with a CSV file -->
+            <h3>MS CS: Human Computer Interaction</h3>
+            <ul id="class_list">
+                <script>
+                    d3.csv('./data/coursework_data.csv', function(data) {
+                        let list = document.getElementById("class_list");
+                
+                        let classString = "";
+                        classString += data.CourseNumber + ", ";
+                        classString += data.CourseName;
+
+                        let listItem = document.createElement('li');
+                        listItem.innerText = classString;
+                        list.appendChild(listItem);   
+                    });
+                </script>
+            </ul>
+            <h3>BS CS: Media (Computer Graphics) & People (HCI)</h3>
+            <ul>
+                <li>CS 1331, Object Oriented Programming</li>
+                <li>CS 1332, Data Structures and Algorithms</li>
+                <li>CS 3750, User Interface Design</li>
+                <li>CS 2110, Computer Organization and Programming</li>
+                <li>CS 2340, Objects and Design</li>
+                <li>CS 4460, Information Visualization</li>
+                <li>CS 2050, Discrete Math</li>
+                <li>CS 3451, Computer Graphics</li>
+                <li>CS 4400, Intro to Database Systems</li>
+                <li>CS 4590, Computer Audio</li>
+                <li>CS 3001, Ethics</li>
+            </ul>
+        <div id="svg_divider_5">
+            <svg height="30" width="800">
+                <defs>
+                    <linearGradient id="divider" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:rgb(36, 225, 165)" />
+                    <stop offset="50%" style="stop-color:rgb(34, 102, 229)" />
+                    <stop offset="100%" style="stop-color:rgb(6, 218, 255)" />
+                    </linearGradient>
+                </defs>
+                <rect width="800" height="10" x="0" y="10" fill="url(#divider)" />
+                </svg>
+        </div>
+        <h2>Miscellaneous</h2>
+        <ul id="misc">
+            <li><a href="caves/index.html">Cave involvements/maps</a></li>
+        </ul>
+        <div id="svg_divider_6">
+            <svg height="30" width="800">
+                <defs>
+                  <linearGradient id="divider" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:rgb(36, 225, 165)" />
+                    <stop offset="50%" style="stop-color:rgb(34, 102, 229)" />
+                    <stop offset="100%" style="stop-color:rgb(6, 218, 255)" />
+                  </linearGradient>
+                </defs>
+                <rect width="800" height="10" x="0" y="10" fill="url(#divider)" />
+              </svg>
+        </div>
+    </div>
+</body>
+</html>
