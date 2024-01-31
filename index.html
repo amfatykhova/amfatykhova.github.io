@@ -99,53 +99,63 @@
         <h2>Work Experience</h2>
             <!-- populate with a CSV file -->
             <ul id="job_list">
-                <script>
-                    
-                    d3.csv('./data/jobs_data.csv', function(data) {
-                        let list = document.getElementById("job_list");
-
-                        let jobString = "";
-                        let jobDescription1 = "";
-                        let jobDescription2 = "";
-                        let jobDescription3 = "";
-                        let jobTenure = "";
-
-                        jobString += data.Title + " -- ";
-                        jobString += data.Location + " -- ";
-                        jobString += data.Name;
-                        jobTenure += data.Time.toUpperCase();
-
-                        jobDescription1 += data.Description1;
-                        jobDescription2 += data.Description2;
-                        jobDescription3 += data.Description3;
-
-                        let listItem = document.createElement('li');
-                        listItem.id = "header"
-                        listItem.innerText = jobString;
-                        list.appendChild(listItem);   
-                        
-                        let datesItem = document.createElement('ul');
-                        datesItem.id = 'tenure'
-                        datesItem.innerText = jobTenure;
-                        list.appendChild(datesItem);
-
-                        let descriptionLine1 = document.createElement('ul');
-                        descriptionLine1.id = 'description'
-                        descriptionLine1.innerText = jobDescription1;
-                        list.appendChild(descriptionLine1);
-
-                        let descriptionLine2 = document.createElement('ul');
-                        descriptionLine2.id = 'description'
-                        descriptionLine2.innerText = jobDescription2;
-                        list.appendChild(descriptionLine2);
-
-                        let descriptionLine3 = document.createElement('ul');
-                        descriptionLine3.id = 'description'
-                        descriptionLine3.innerText = jobDescription3;
-                        list.appendChild(descriptionLine3);
-                    });
-                    
-                </script>
+                <li>
+                    Full Stack Intern -- Remote -- Cisco Meraki
+                </li>
+                    <ul>
+                        MAY 2023 - JANUARY 2024
+                    </ul>
+                    <ul>
+                        Summer 2023 - Fall 2023 internship with the Data Engineering team; utilized Scala, PostgreSQL, Jira, Jenkins, Gerrit.
+                    </ul>
+                    <ul>
+                        Created a framework for dynamic instantiation of “Grabber” Scala services in Docker containers; deployed to a Kubernetes cluster.
+                    </ul>
+                    <ul>
+                        Grabbers grab data from network nodes; deployed a POC containerized grabber to production environment; CI/CD, agile.
+                    </ul>
+                <li>
+                    Full Stack Intern -- San Fransisco CA -- Cisco Meraki
+                </li>
+                    <ul>
+                        MAY 2022 - AUGUST 2022
+                    </ul>
+                    <ul>
+                        Data Engineering team: utilized Scala, Rails, PostgreSQL, Jira, Jenkins, Gerrit, to write backend software for networks.
+                    </ul>
+                    <ul>
+                        Created new aggregation protocols for node (routers and switches) data to optimize network communication.
+                    </ul>
+                    <ul>
+                        Intern project focusing on extending Scala data aggregation framework with file reading and data formatting, data sent to S3.
+                    </ul>
+                <li>
+                    Software Development Intern -- Newton MA -- Adobe
+                </li>
+                    <ul>
+                        MAY 2021 - AUGUST 2021
+                    </ul>
+                    <ul>
+                        Created a dashboard with unique user-based dynamic charts, utilizing full-stack development across several microservices.
+                    </ul>
+                    <ul>
+                        Used MySQL to create multiple user report changesets, as well as the Vega Visualization library to generate charts in the UI.
+                    </ul>
+                    <ul>
+                        Gained experience in Spring Boot, Liquibase, Jira, Docker, and Jenkins; ranked #8 out of 633 Summer 2021 intern projects.
+                    </ul>
+                <li>
+                    Software Development Intern -- Atlanta GA -- Georgia Tech Research Institute
+                </li>
+                    <ul>
+                        JANUARY 2021 - MAY 2021
+                    </ul>
+                    <ul>
+                        Worked on the HRAPS front-end team developing a web application to track vital monitoring in the field for the U.S. Army.
+                    </ul>
+                    <ul>
+                        Used React.js and JavaScript to add key features to the web application, including dashboards, forms, page submit functions.
+                    </ul>
             </ul>
         <div id="svg_divider_3">
             <svg height="30" width="800">
@@ -161,45 +171,46 @@
         </div>
         <h2>Research and Projects</h2>
             <ul id="research_list">
-                <script>
-                    
-                    d3.csv('./data/research.csv', function(data) {
-                        let list = document.getElementById("research_list");
-
-                        let heading = "";
-                        let dates = "";
-                        let jobDescription1 = "";
-                        let jobDescription2 = "";
-
-                        heading += data.Title + " -- ";
-                        heading += data.SubTitle;
-                        dates += data.Dates.toUpperCase();
-
-                        jobDescription1 += data.Description1;
-                        jobDescription2 += data.Description2;
-
-                        let listItem = document.createElement('li');
-                        listItem.id = "header"
-                        listItem.innerText = heading;
-                        list.appendChild(listItem);   
-                        
-                        let datesItem = document.createElement('ul');
-                        datesItem.id = 'tenure'
-                        datesItem.innerText = dates;
-                        list.appendChild(datesItem);
-
-                        let descriptionLine1 = document.createElement('ul');
-                        descriptionLine1.id = 'description'
-                        descriptionLine1.innerText = jobDescription1;
-                        list.appendChild(descriptionLine1);
-
-                        let descriptionLine2 = document.createElement('ul');
-                        descriptionLine2.id = 'description'
-                        descriptionLine2.innerText = jobDescription2;
-                        list.appendChild(descriptionLine2);
-                    });
-                    
-                </script>
+                <li>Strangeland Virtual Reality Research -- Graduate Researcher</li>
+                    <ul>
+                        JANUARY 2024 - MAY 2024
+                    </ul>
+                    <ul>
+                        Researcher working on 3D-audio integration into Strangeland Unity Virtual Reality research experiment.
+                    </ul>
+                    <ul>
+                        Utilized SWAN 3D audio system to implement binaural sound into Strangeland for accessibility and sound navigation.
+                    </ul>
+                <li>Letterboxd Community Study -- CS 6470 Design of Online Communities</li>
+                    <ul>
+                        SEPTEMBER 2023 - NOVEMBER 2023
+                    </ul>
+                    <ul>
+                        Team project: conducted user research and interview of r/Letterboxd in order to understand what draws members to the site.
+                    </ul>
+                    <ul>
+                        <a href="https://drive.google.com/file/d/1MEZ9WAYHF5qglDYPQx-NOsBdkmnjyV0M/view?usp=sharing">Research Paper</a>
+                    </ul>
+                <li>Navigation Sonification Simulator -- CS 4590 Computer Audio Project</li>
+                    <ul>
+                        OCTOBER 2022 - DECEMBER 2022
+                    </ul>
+                    <ul>
+                        Simulator for airport navigation for Hartsfield Jackson International Airport; bag location mode, security line time mode.
+                    </ul>
+                    <ul>
+                        Utilized Processing P5 Java and Beads libraries to generate sonification’s for the user for sound-based information delivery.
+                    </ul>
+                <li>Bank Database GUI -- CS 4400 Database Systems Project</li>
+                    <ul>
+                        MARCH 2022 - MAY 2022
+                    </ul>
+                    <ul>
+                        Team project: MySQL database created including ERD diagrams and constraints, changesets, and 25+ stored procedures.
+                    </ul>
+                    <ul>
+                        Utilized JavaScript, HTML, CSS to create GUI for each stored procedure; separate admin, user, and manager menus.
+                    </ul>
             </ul>
         <div id="svg_divider_4">
             <svg height="30" width="800">
@@ -217,19 +228,14 @@
             <!-- populate with a CSV file -->
             <h3>MS CS: Human Computer Interaction</h3>
             <ul id="class_list">
-                <script>
-                    d3.csv('./data/coursework_data.csv', function(data) {
-                        let list = document.getElementById("class_list");
-                
-                        let classString = "";
-                        classString += data.CourseNumber + ", ";
-                        classString += data.CourseName;
-
-                        let listItem = document.createElement('li');
-                        listItem.innerText = classString;
-                        list.appendChild(listItem);   
-                    });
-                </script>
+                <li>CS 6750, Human Computer Interaction</li>
+                <li>CS 7450, Information Visualization</li>
+                <li>CS 6795, Intro to Cognitive Science</li>
+                <li>CS 8803, Special Topics: Sonification HCI Research Lab</li>
+                <li>CS 6470, Design of Online Communities</li>
+                <li>CS 7470, Mobile and Ubiquitous Computing</li>
+                <li>CS 6460, Educational Technology</li>
+                <li>CS 6454, Qualitative Methods in HCI</li>
             </ul>
             <h3>BS CS: Media (Computer Graphics) & People (HCI)</h3>
             <ul>
